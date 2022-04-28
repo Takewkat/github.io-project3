@@ -96,3 +96,42 @@ body {
 //===================================================================================================================================
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================
+.search {
+	display: flex;
+	max-height: 520px;
+	&__container {
+		display: flex;
+		flex-direction: column;
+		height: 337px;
+	}
+	&__geo {
+		display: flex;
+		height: 50px;
+		&_link {
+		}
+	}
+	&_svg {
+		width: 12px;
+		height: 16px;
+	}
+	&__more {
+		display: flex;
+		flex-direction: column;
+		height: 285px;
+	}
+	&__title {
+		font-weight: bold;
+		font-size: 18px;
+	}
+	&_btn {
+	}
+}
+
+.fonction__container {
+}
+.fonction__title {
+}
+.fonction_btn {
+}
+.fonction_svg {
+}

@@ -8,13 +8,23 @@
       color: $greenColor;
     }
   }
-}
-.footer__container {
+  &__container {
   max-height: 196px;
   min-height: 60px;
   line-height: 120%;
   @include adaptiv-value("font-size", 18, 14, 1);
+  }
+  &_link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  &_svg {
+    width: 16px;
+    height: 16px;
+  }
 }
+
 .menu-footer__list {
   display: flex;
   align-items: center;
@@ -36,14 +46,5 @@
     height: 24px;
     margin-bottom: 20px;
   }
-}
-.footer_link {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.footer_svg {
-  width: 16px;
-  height: 16px;
 }
 //====================================================================================================

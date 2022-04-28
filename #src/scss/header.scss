@@ -6,8 +6,16 @@
 	// .header__content
 	&__content {
 		max-width: 1294px;
+		height: 60px;
 		padding: 0px 10px;
 		margin: 0px auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&_svg {
+		height: 32px;
+		width: 168px;
 	}
 }
 
