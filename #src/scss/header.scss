@@ -10,12 +10,19 @@
 		padding: 0px 10px;
 		margin: 0px auto;
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		align-items: center;
+		@media (max-width: $md3+px) {
+			justify-content: center;
+		}
 	}
 	&_svg {
 		height: 32px;
 		width: 168px;
+	}
+	&__arrow_svg {
+		height: 18px;
+		width: 18px;
 	}
 }
 

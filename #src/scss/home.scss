@@ -6,4 +6,16 @@ img {
     opacity: 0.5;
   }
 }
+a {
+  color: $mainColor;
+  text-decoration: none;
+  &:hover {
+    transition: color 0.3s ease 0s;
+    color: $greenColor;
+  }
+}
+._title {
+  font-size: $fontSizeTitle;
+  font-weight: $fontWeightTitle;
+}
 //====================================================================================================

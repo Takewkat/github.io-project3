@@ -6,17 +6,14 @@
 //<ШРИФТЫ>===============================================================================================
 
 //<Подключаем шрифты>=======================================================================================
-//&display=swap&subset=cyrillic-ext
-@import "fonts";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 //</Подключаем шрифты>=======================================================================================
 
-//<Иконочные шрифты>==========================================================================================
-//@import "icons";
-//</Иконочные шрифты>==========================================================================================
-
 //<Шрифт по умолчанию>==========================================================================================
-$fontFamily: "Roboto";
-$fontSize: 16;
+$fontFamily: 'Roboto';
+$fontSize: 16px;
+$fontSizeTitle: 18px;
+$fontWeightTitle: 700;
 //</Шрифт по умолчанию>==========================================================================================
 
 //</ШРИФТЫ>=======================================================================================================
@@ -31,10 +28,14 @@ $md3: 767.98;
 $md4: 479.98;
 
 $mainColor: #000;
-$darkColor: #9356DC ;
+$darkColor: #9356DC;
 $lightColor: #FF79DA;
 $greenColor: #99E2D0;
+$darkGreenColor:#469e88;
 $whiteColor: #fff;
+$greyColor: #f2f0f0;
+$darkGreyColor: #dddcdc;
+$hoverVioletColor: #d7c3f1;
 
 //</ПЕРЕМЕННЫЕ>===========================================================================================================
 
@@ -98,40 +99,204 @@ body {
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 .search {
 	display: flex;
-	max-height: 520px;
+	justify-content: center;
+	flex-wrap: wrap;
 	&__container {
 		display: flex;
 		flex-direction: column;
+		max-height: 520px;
 		height: 337px;
+		max-width: 370px;
+		width: 100%;
+		margin: 0 80px;
+		@media (max-width: $md3+px) {
+			max-width: none;
+			margin: 0;
+		}
 	}
 	&__geo {
 		display: flex;
+		justify-content: center;
+		align-items: center;
 		height: 50px;
+		background-color: $darkGreyColor;
 		&_link {
 		}
 	}
 	&_svg {
 		width: 12px;
 		height: 16px;
+		margin-right: 16px;
 	}
 	&__more {
 		display: flex;
 		flex-direction: column;
 		height: 285px;
+		background-color: $greyColor;
+		text-align: center;
+		align-items: center;
+		line-height: 120%;
 	}
 	&__title {
-		font-weight: bold;
-		font-size: 18px;
+		margin: 38px 0 22px 0;
+	}
+	&__text {
+		font-weight: 300;
 	}
 	&_btn {
+		height: 50px;
+		width: 220px;
+		margin-top: 28px;
+		border-radius: 50px;
+		font-weight: 400;
+		color: $whiteColor;
+		background-image: linear-gradient(to right, $lightColor 0%, #d330e9  51%, #e796f7  100%);
+		&:hover {
+			background-position: right center; /* change the direction of the change here */
+			color: $greenColor;
+			text-decoration: none;
+		}
+	}
+}
+//==================================================================================================================
+.fonction__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 436px;
+	max-width: 370px;
+	width: 100%;
+	row-gap: 20px;
+}
+.fonction__title {
+	@media (max-width: $md2+px) {
+		padding-top: 46px;
+	}
+}
+.fonction__btn {
+	height: 70px;
+	width: 320px;
+	background-color: $greyColor;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	column-gap: 20px;
+	&_span {
+		display: flex;
+		align-items: center;		
+		justify-content: center;
+		margin-left: -13px;
+		width: 26px;
+		height: 26px;
+		background-color: $darkColor;
+		color: $whiteColor;
+		border-radius: 50px;
+	}
+	&_svg {
+		width: 16px;
+	}
+	&:hover {
+		background-color: $hoverVioletColor;
+		.fonction__btn_svg {
+			filter: invert(40%) sepia(81%) saturate(2746%) hue-rotate(243deg) brightness(91%) contrast(89%);
+			opacity: 0.9;
+		}
+	}
+}
+//==================================================================================================================
+.resto {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 0 60px 0;
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 18px;
+		@media (max-width: $md2+px) {
+			justify-content: center;
+		}
+	}
+	&__title {
+		margin-bottom: 28px;
+		align-self: flex-start;
+	}
+	&__card__box {
+		height: 250px;
+		display: flex;
+		flex-direction: column;
+		border-radius: 20px;
+		box-shadow: 0px 0px 10px $mainColor;
+		&:hover {
+			transform: scale(1.02);
+		}					
+	}
+	&__img {
+		width: 336px;
+		height: 174px;
+		display: grid;
+		grid-template-columns: 244px 92px;
+		grid-template-rows: 58px 58px 58px;
+		&-img {
+			object-fit: cover;
+			border-radius: 20px 20px 0 0;
+			grid-column: 1/3;
+			grid-row: 1/4;
+			&:hover {
+				opacity: 0.9;
+			}			
+		}
+		&__label {
+			margin-right: -92px;
+			grid-column: 2;
+			grid-row: 1/3;
+			align-self: center;
+			width: 80px;
+			height: 28px;
+			background-color: $greenColor;
+			color: $darkGreenColor;
+			display: flex;
+			align-items: center;			
+			justify-content: center;
+		}
+	}
+	&__info {
+		display: grid;
+		grid-template-columns: 260px 42px;
+  	grid-template-rows: 38px 38px;
+  	grid-auto-flow: row;
+		height: 76px;
+		padding-left: 14px;
+		&__title {
+			font-weight: $fontWeightTitle;
+			grid-column: 1;
+			grid-row: 1;
+			align-self: center;
+		}
+		&__text {
+			grid-column: 1;
+			grid-row: 2;
+		}
+		&__svg {
+			height: 23px;
+			grid-column: 2;
+  		grid-row: 1 / 3;
+			align-self: center;
+			opacity: 1;
+			&-hov {
+				height: 23px;
+				grid-column: 2;
+				grid-row: 1 / 3;
+				align-self: center;
+				opacity: 0;
+			}
+			&:hover {
+				visibility: hidden;
+				filter: invert(40%) sepia(81%) saturate(2746%) hue-rotate(243deg) brightness(91%) contrast(89%);
+				&-hov {
+					opacity: 1;
+				}
+			}			
+		}
 	}
 }
 
-.fonction__container {
-}
-.fonction__title {
-}
-.fonction_btn {
-}
-.fonction_svg {
-}
