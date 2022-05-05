@@ -1,21 +1,201 @@
+//PAGE STYLE (page.html)
 //====================================================================================================
-img {
-  width: 100%;
-  height: 100%;
-  &:hover {
-    opacity: 0.5;
+.page__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 40% 20% 40%;
+  align-items: center;
+  margin: 40px 0;
+  row-gap: 10px;
+  @media (max-width:$md3+px){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 10px 0;
   }
 }
-a {
-  color: $mainColor;
-  text-decoration: none;
-  &:hover {
-    transition: color 0.3s ease 0s;
-    color: $greenColor;
+.commander_btn {
+  justify-self: center;
+  width: 186px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  grid-row: 2;
+  grid-column: 1;
+  align-self: start;
+  @media (max-width:$md3+px){
+    margin: 46px 0 48px 0;
+    align-self: center;
   }
 }
-._title {
-  font-size: $fontSizeTitle;
-  font-weight: $fontWeightTitle;
+.list-entrees {
+  grid-column: 2;
+  grid-row: 1;
 }
-//====================================================================================================
+.list-plats {
+  grid-row: 3;
+  grid-column: 1;
+  justify-self: center; 
+}
+.list-desserts {
+  grid-column: 2;
+  grid-row: 3;
+}
+._animation_1{
+  animation: list__drop linear 0.6s forwards;  
+}
+._animation_2 {
+  animation: list__drop linear 0.8s forwards; 
+}
+._animation_3{
+  animation: list__drop linear 1s forwards;
+}
+//==========================================
+.card {
+  grid-column: 1;
+	grid-row: 1;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  @media (max-width:$md3+px){
+    max-width: 480px;
+  }
+  &__image {
+    z-index: 0;
+  }
+  &__title__box {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: -34px;
+    z-index: 2;
+    background-color: $greyColor;
+    border-radius: 36px 36px 0 0;
+    padding: 10px 0;
+  }
+  &__title {
+    align-self: center;
+    font-size: 22px;
+    font-style: italic;
+    font-family: $fontFamilyTitle;
+  }
+}
+.list {
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  background-color: $greyColor;
+  padding: 0 12px 0 14px;
+  &__title {
+    padding: 9px 0;
+    font-weight: $fontWeightLight;
+  }
+  &__line {
+    width: 40px;
+    height: 3px;
+    background-color: $greenColor;
+  }
+  &__box {
+    margin: 14px 0;
+    padding-left: 10px;
+    display: grid;
+    min-height: 0; 
+    min-width: 0; 
+    justify-items: start;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    line-height: 120%;
+    background-color: $whiteColor;
+    border-radius: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    @include adaptiv-value("font-size", 16, 14, 1);
+    &-title {
+      grid-column: 1;
+      grid-row: 1;
+      font-weight: $fontWeightTitle;
+      padding-top: 16px;
+      overflow: hidden;  
+      min-width: 0;
+    }
+    &-text {
+      grid-column: 1;
+      grid-row: 2;
+      font-weight: $fontWeightLight;
+      overflow: hidden;  
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    &-price {
+      grid-column: 3;
+      grid-row: 2;
+      justify-self: end;
+      font-weight: $fontWeightTitle;
+      margin: 0 22px;
+      overflow: hidden;  
+      min-width: 0;
+      animation-name: slide__price_reverse;
+      animation-duration: 0.8s;
+      transition-duration: 1s;
+    }
+    .list__box-animation {
+      display: flex;
+      width: 59px;
+      grid-row: 1/3;
+      grid-column: 3;
+      animation-name: slide__check__reverse;
+      animation-duration: 1s;
+      transition-duration: 1s;
+      &_icon {
+        font-size: 20px;
+        align-self: center;
+        color: lighten($greenColor, 40);
+        opacity: 0;
+      }
+    }
+    &:hover, &:focus, &:active {
+      .list__box-text, .list__box-title {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .list__box-price {
+        animation-name: slide__price;
+        animation-duration: 0.6s;
+        animation-fill-mode: forwards;
+      }
+      .list__box-animation {
+        grid-column: 3;
+        grid-row: 1/3;
+        justify-self: end;
+        width: 59px;
+        background-color: $greenColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 20px 20px 0;
+        animation-name: slide__check;
+        animation-duration: 0.6s;
+        animation-fill-mode: forwards;
+        &_icon {
+          animation-name: move__check;
+          animation-duration: 0.6s;
+          animation-fill-mode: forwards;
+          font-size: 20px;
+          opacity: 1;
+        }
+      }
+    }    
+  }
+  
+}
+
+
+
+
+
+
+
+
