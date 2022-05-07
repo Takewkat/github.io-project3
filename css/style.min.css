@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
 * {
   padding: 0px;
   margin: 0px;
@@ -32,7 +33,7 @@ body {
 
 body {
   line-height: 1;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -144,123 +145,10 @@ body._lock {
 }
 .main_btn:hover {
   background-position: right center;
-  /* change the direction of the change here */
   text-decoration: none;
-  box-shadow: 0px 0px 1px #f2f0f0;
+  box-shadow: 0px 0px 4px #dddcdc;
   animation: fill 0.6s ease-in-out;
   background: linear-gradient(to left, #FF79DA 0%, #e897f3 51%, #e7b3f3 100%);
-}
-
-.select {
-  position: relative;
-}
-.select__item {
-  position: relative;
-}
-.select__title {
-  color: #000;
-  border: 1px solid #d9d9d9;
-  background-color: #fff;
-  cursor: pointer;
-  border-radius: 4px;
-}
-@media (max-width: 991.98px) {
-  .select__title {
-    font-size: 18px;
-  }
-}
-.select__value {
-  display: flex;
-  font-size: 14px;
-  height: 30px;
-  padding: 0px 15px;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row-reverse;
-}
-.select__value span {
-  height: 1em;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-}
-.select__value:before {
-  content: "";
-  display: inline-block;
-  transition: all 0.3s ease 0s;
-  width: 11px;
-  height: 7px;
-  background: url("../img/icons/select.svg") center/100% no-repeat;
-}
-.select__input {
-  width: 100%;
-  background-color: transparent;
-  height: 100%;
-}
-.select__options {
-  color: #000;
-  position: absolute;
-  top: 29px;
-  border-radius: 0 0 4px 4px;
-  min-width: 100%;
-  left: 0;
-  background-color: #fff;
-  border-top: 0;
-  border: 1px solid #d9d9d9;
-  border-top: 0;
-  font-size: 14px;
-  padding: 10px 0px 5px 0px;
-}
-@media (max-width: 991.98px) {
-  .select__options {
-    font-size: 18px;
-  }
-}
-.select__option {
-  cursor: pointer;
-  padding: 5px 15px;
-  margin: 0px 0px 0px 0px;
-}
-@media (min-width: 992px) {
-  .select__option:hover {
-    background: #d9d9d9;
-  }
-}
-.select._active {
-  z-index: 5;
-}
-.select._active .select__value:before {
-  transform: rotate(-180deg);
-}
-.select._active .select__options {
-  display: block;
-}
-
-input[type=text],
-input[type=email],
-input[type=tel],
-textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=tel]:focus,
-textarea:focus {
-  outline: none;
-}
-
-.input {
-  border-radius: 0 !important;
-  width: 100%;
-  display: block;
-  padding: 0px 20px;
-}
-textarea.input {
-  resize: none;
-  padding: 0px 0px;
 }
 
 img {
@@ -279,6 +167,10 @@ a {
 a:hover {
   transition: color 0.3s ease 0s;
   color: #99E2D0;
+}
+
+._title_h1 {
+  font-family: "Shrikhand", cursive;
 }
 
 ._title {
@@ -353,7 +245,6 @@ a:hover {
 @keyframes slide__check__reverse {
   from {
     transform: translateX(40%);
-    width: 56px;
     opacity: 1;
   }
   to {
@@ -513,15 +404,15 @@ a:hover {
 }
 
 ._animation_1 {
-  animation: list__drop linear 0.6s forwards;
+  animation: list__drop linear 1s forwards;
 }
 
 ._animation_2 {
-  animation: list__drop linear 0.8s forwards;
+  animation: list__drop linear 1.2s forwards;
 }
 
 ._animation_3 {
-  animation: list__drop linear 1s forwards;
+  animation: list__drop linear 1.4s forwards;
 }
 
 .card {
@@ -547,13 +438,12 @@ a:hover {
   z-index: 2;
   background-color: #f2f0f0;
   border-radius: 36px 36px 0 0;
-  padding: 10px 0;
+  padding: 34px 0;
 }
 .card__title {
   align-self: center;
   font-size: 22px;
-  font-style: italic;
-  font-family: "Shrikhand";
+  font-family: "Shrikhand", cursive;
 }
 
 .list {
@@ -634,7 +524,9 @@ a:hover {
   font-size: 20px;
   align-self: center;
   color: white;
-  opacity: 0;
+  animation-name: slide__check__reverse;
+  animation-duration: 1s;
+  transition-duration: 1s;
 }
 .list__box:hover .list__box-text, .list__box:hover .list__box-title, .list__box:focus .list__box-text, .list__box:focus .list__box-title, .list__box:active .list__box-text, .list__box:active .list__box-title {
   max-width: 100%;

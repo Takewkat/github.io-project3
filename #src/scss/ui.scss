@@ -16,6 +16,9 @@ a {
   }
 }
 //==========================
+._title_h1 {
+	font-family: $fontFamilyTitle;
+}
 ._title {
   font-size: $fontSizeTitle;
   font-weight: $fontWeightTitle;
@@ -91,7 +94,6 @@ a {
 @keyframes slide__check__reverse {
 	from {
 		transform: translateX(40%);
-		width: 56px;
 		opacity: 1;
 	}
 	to {
