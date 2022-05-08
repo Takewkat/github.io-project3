@@ -4,7 +4,7 @@
 $fontFamily: 'Roboto', sans-serif;
 $fontFamilyTitle: 'Shrikhand', cursive;
 $fontSize: 16px;
-$fontSizeTitle: 18px;
+$fontSizeTitle: 20px;
 $fontWeightTitle: 700;
 $fontWeightLight: 100;
 
@@ -147,11 +147,15 @@ body {
 	@media (max-width: $md2+px) {
 		padding-top: 46px;
 	}
+	@media (max-width: $md3+px) {
+		align-self: start;
+	}
 }
 .fonction__btn {
 	height: 70px;
 	width: 320px;
 	background-color: $greyColor;
+	font-weight: 500;
 	border-radius: 20px;
 	display: flex;
 	align-items: center;
@@ -178,16 +182,23 @@ body {
 		}
 	}
 }
+
 //==================================================================================================================
 .resto {
 	display: flex;
 	flex-wrap: wrap;
-	padding: 0 0 60px 0;
+	padding: 0 0 60px 120px;
+	@media (max-width: $md2+px) {
+		padding: 0 0 60px 0;
+	}
 	&__container {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 18px;
-		@media (max-width: $md2+px) {
+		@media (min-width: $md3+px) {
+			margin: 0 -40px;
+		}		
+		@media (max-width: $md3+px) {
 			justify-content: center;
 		}
 	}

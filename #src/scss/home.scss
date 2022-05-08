@@ -12,7 +12,7 @@
     flex-direction: column;
     align-items: center;
     gap: 0;
-    margin: 10px 0;
+    margin: 10px 0 0 0;
   }
 }
 .commander_btn {
@@ -27,6 +27,15 @@
   @media (max-width:$md3+px){
     margin: 46px 0 48px 0;
     align-self: center;
+  }
+  &__container {
+    display: flex;
+    justify-content: center;
+    @media (max-width:$md3+px){
+      background-color: $greyColor;
+      max-width: 480px;
+      width: 100%;
+    }
   }
 }
 .list-entrees {
@@ -65,14 +74,17 @@
   &__image {
     z-index: 0;
   }
+  &__info__svg {
+    padding: 0 20px;
+  }
   &__title__box {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-top: -34px;
     z-index: 2;
     background-color: $greyColor;
     border-radius: 36px 36px 0 0;
-    padding: 34px 0;
+    padding: 34px 20px;
   }
   &__title {
     align-self: center;

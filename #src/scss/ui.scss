@@ -30,7 +30,7 @@ a {
 .heart {
 	color: black;
 	&:hover {
-		animation: fill 0.6s ease-in-out;
+		animation: fill 0.8s ease-in-out;
 		display: inline-block;
 		opacity: 1;
 		background: linear-gradient(to left, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
@@ -41,7 +41,7 @@ a {
 	}			
 }
 
-//<KEYFRAMES ANIMATIONS>====================================================================================================
+//<KEYFRAMES ANIMATIONS FOR PAGES>====================================================================================================
 @keyframes list__drop {
 	0% {
 			opacity: 0;
