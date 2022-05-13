@@ -510,6 +510,15 @@ a:hover {
 }
 .card__image {
   z-index: 0;
+  max-height: 400px;
+}
+@media (max-width: 767.98px) {
+  .card__image {
+    max-height: 300px;
+  }
+}
+.card__image-content {
+  object-fit: cover;
 }
 .card__info__svg {
   padding: 0 20px;

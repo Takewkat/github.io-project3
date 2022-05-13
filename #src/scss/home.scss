@@ -73,6 +73,13 @@
   }
   &__image {
     z-index: 0;
+    max-height: 400px;
+    @media (max-width:$md3+px){
+      max-height: 300px;
+    }
+    &-content {
+      object-fit: cover;
+    }
   }
   &__info__svg {
     padding: 0 20px;
