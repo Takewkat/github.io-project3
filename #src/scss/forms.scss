@@ -16,8 +16,8 @@
 	font-weight: 400;
 	line-height: 120%;
 	color: $whiteColor;
-	box-shadow: 4px 4px 4px $greyColor;
-	background-image: linear-gradient(to right, $lightColor 0%, #d330e9  51%, #e796f7  100%);
+	box-shadow: 4px 4px 4px $darkGreyColor;
+	background-image: linear-gradient(to top, #b862db  0%, #ec73da  100%);
 	@media (any-hover: hover) {
 		&:hover {
 			cursor: pointer;

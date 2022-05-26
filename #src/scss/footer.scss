@@ -14,7 +14,7 @@
   max-height: 196px;
   min-height: 60px;
   line-height: 120%;
-  @include adaptiv-value("font-size", 18, 14, 1);
+  @include adaptiv-value("font-size", 18, 16, 1);
   }
   &_link {
     display: flex;
@@ -45,7 +45,7 @@
   height: 36px;
   @media (max-width: $md3+px) {
     width: 100px;
-    height: 24px;
+    height: 18px;
     margin-bottom: 20px;
   }
 }
