@@ -144,13 +144,15 @@ body._lock {
   box-shadow: 4px 4px 4px #f2f0f0;
   background-image: linear-gradient(to right, #FF79DA 0%, #d330e9 51%, #e796f7 100%);
 }
-.main_btn:hover {
-  cursor: pointer;
-  background-position: right center;
-  text-decoration: none;
-  box-shadow: 4px 4px 4px #dddcdc;
-  animation: fill 1s ease-in-out;
-  background: linear-gradient(to left, #FF79DA 0%, #e897f3 51%, #e7b3f3 100%);
+@media (any-hover: hover) {
+  .main_btn:hover {
+    cursor: pointer;
+    background-position: right center;
+    text-decoration: none;
+    box-shadow: 4px 4px 4px #dddcdc;
+    animation: fill 1s ease-in-out;
+    background: linear-gradient(to left, #FF79DA 0%, #e897f3 51%, #e7b3f3 100%);
+  }
 }
 
 .loader {
@@ -225,17 +227,16 @@ img {
   height: 100%;
   object-fit: contain;
 }
-img:hover {
-  opacity: 0.5;
-}
 
 a {
   color: #000;
   text-decoration: none;
 }
-a:hover {
-  transition: color 0.3s ease 0s;
-  color: #99E2D0;
+@media (any-hover: hover) {
+  a:hover {
+    transition: color 0.3s ease 0s;
+    color: #99E2D0;
+  }
 }
 
 ._title_h1 {
@@ -255,17 +256,19 @@ a:hover {
 .heart {
   color: black;
 }
-.heart:hover {
-  animation: fill 0.8s ease-in-out;
-  display: inline-block;
-  opacity: 1;
-  background: linear-gradient(to left, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  font-weight: bold;
+.heart:visited, .heart:active {
+  text-shadow: 0 0 1px rgba(252, 155, 224, 0.6549019608);
+  cursor: pointer;
 }
 
+@keyframes heart__hover {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: #ff79da;
+  }
+}
 @keyframes list__drop {
   0% {
     opacity: 0;
@@ -320,6 +323,17 @@ a:hover {
     transform: translateX(100%);
   }
 }
+@keyframes move__text {
+  0% {
+    max-width: 200%;
+  }
+  50% {
+    max-width: 180%;
+  }
+  100% {
+    max-width: 160%;
+  }
+}
 .header {
   position: relative;
   z-index: 100;
@@ -339,18 +353,13 @@ a:hover {
   }
 }
 .header__content__pages {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   max-width: 1294px;
   height: 60px;
   padding: 0px 10px;
   margin: 0px auto;
   align-items: center;
-}
-@media (max-width: 767.98px) {
-  .header__content__pages {
-    grid-template-columns: 1fr 2fr;
-  }
+  justify-content: space-between;
 }
 .header_svg {
   height: 32px;
@@ -369,8 +378,10 @@ a:hover {
 .footer a {
   color: #fff;
 }
-.footer a:hover {
-  color: #99E2D0;
+@media (any-hover: hover) {
+  .footer a:hover {
+    color: #99E2D0;
+  }
 }
 .footer__container {
   max-height: 196px;
@@ -532,6 +543,20 @@ a:hover {
   border-radius: 36px 36px 0 0;
   padding: 34px 20px;
 }
+@media (any-hover: hover) {
+  .card__title__box:hover {
+    cursor: pointer;
+  }
+  .card__title__box:hover .heart {
+    animation: heart__hover 2s forwards;
+    display: inline-block;
+    opacity: 1;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+  }
+}
 .card__title {
   align-self: center;
   font-size: 22px;
@@ -568,11 +593,11 @@ a:hover {
   border-radius: 20px;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 16px;
+  font-size: 18px;
 }
 @media (max-width: 1340px) {
   .list__box {
-    font-size: calc(14px + 2 * ((100vw - 320px) / 1020));
+    font-size: calc(16px + 2 * ((100vw - 320px) / 1020));
   }
 }
 .list__box-title {
@@ -582,6 +607,9 @@ a:hover {
   padding-top: 16px;
   overflow: hidden;
   min-width: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 220%;
 }
 .list__box-text {
   grid-column: 1;
@@ -590,6 +618,7 @@ a:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  max-width: 220%;
 }
 .list__box-price {
   grid-column: 3;
@@ -615,16 +644,18 @@ a:hover {
 .list__box .list__box-animation_icon {
   font-size: 20px;
   align-self: center;
-  color: white;
+  color: transparent;
   animation-name: slide__check__reverse;
   animation-duration: 1s;
   transition-duration: 1s;
 }
 .list__box:hover .list__box-text, .list__box:hover .list__box-title, .list__box:focus .list__box-text, .list__box:focus .list__box-title, .list__box:active .list__box-text, .list__box:active .list__box-title {
-  max-width: 100%;
   overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
+  animation-name: move__text;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  text-overflow: ellipsis;
 }
 .list__box:hover .list__box-price, .list__box:focus .list__box-price, .list__box:active .list__box-price {
   animation-name: slide__price;
@@ -651,6 +682,7 @@ a:hover {
   animation-fill-mode: forwards;
   font-size: 20px;
   opacity: 1;
+  color: #fff;
 }
 
 .page {
@@ -754,12 +786,14 @@ a:hover {
 .fonction__btn_svg {
   width: 16px;
 }
-.fonction__btn:hover {
-  background-color: #d7c3f1;
-}
-.fonction__btn:hover .fonction__btn_svg {
-  filter: invert(40%) sepia(81%) saturate(2746%) hue-rotate(243deg) brightness(91%) contrast(89%);
-  opacity: 0.9;
+@media (any-hover: hover) {
+  .fonction__btn:hover {
+    background-color: #d7c3f1;
+  }
+  .fonction__btn:hover .fonction__btn_svg {
+    filter: invert(40%) sepia(81%) saturate(2746%) hue-rotate(243deg) brightness(91%) contrast(89%);
+    opacity: 0.9;
+  }
 }
 
 .resto {
@@ -814,9 +848,6 @@ a:hover {
   grid-column: 1/3;
   grid-row: 1/4;
 }
-.resto__img-img:hover {
-  opacity: 0.9;
-}
 .resto__img__label {
   margin-right: -92px;
   grid-column: 2;
@@ -837,6 +868,17 @@ a:hover {
   grid-auto-flow: row;
   height: 76px;
   padding-left: 14px;
+}
+@media (any-hover: hover) {
+  .resto__info:hover .heart {
+    animation: heart__hover 2s forwards;
+    display: inline-block;
+    opacity: 1;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+  }
 }
 .resto__info__title {
   font-weight: 700;

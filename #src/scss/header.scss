@@ -16,16 +16,13 @@
 			justify-content: center;
 		}
 		&__pages {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
+			display: flex;
 			max-width: 1294px;
 			height: 60px;
 			padding: 0px 10px;
 			margin: 0px auto;
 			align-items: center;
-			@media (max-width:$md3+px){
-				grid-template-columns: 1fr 2fr;
-			}
+			justify-content: space-between;
 		}
 	}
 	&_svg {

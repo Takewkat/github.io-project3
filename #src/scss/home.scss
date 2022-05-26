@@ -92,6 +92,20 @@
     background-color: $greyColor;
     border-radius: 36px 36px 0 0;
     padding: 34px 20px;
+    @media (any-hover: hover) {
+      &:hover {
+        cursor: pointer;
+        .heart{
+          animation: heart__hover 2s forwards;
+          display: inline-block;
+          opacity: 1;
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+          font-weight: bold;
+        }			
+      }
+    }
   }
   &__title {
     align-self: center;
@@ -128,7 +142,7 @@
     border-radius: 20px;
     white-space: nowrap;
     overflow: hidden;
-    @include adaptiv-value("font-size", 16, 14, 1);
+    @include adaptiv-value("font-size", 18, 16, 1);
     &-title {
       grid-column: 1;
       grid-row: 1;
@@ -136,6 +150,9 @@
       padding-top: 16px;
       overflow: hidden;  
       min-width: 0;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 220%;
     }
     &-text {
       grid-column: 1;
@@ -144,6 +161,7 @@
       overflow: hidden;  
       text-overflow: ellipsis;
       white-space: nowrap;
+      max-width: 220%;
     }
     &-price {
       grid-column: 3;
@@ -168,7 +186,7 @@
       &_icon {
         font-size: 20px;
         align-self: center;
-        color: lighten($greenColor, 40);
+        color: transparent;
         animation-name: slide__check__reverse;
         animation-duration: 1s;
         transition-duration: 1s;
@@ -176,10 +194,12 @@
     }
     &:hover, &:focus, &:active {
       .list__box-text, .list__box-title {
-        max-width: 100%;
         overflow: hidden;
-        text-overflow: ellipsis;
         white-space: nowrap;
+        animation-name: move__text;
+        animation-duration: 0.6s;
+        animation-fill-mode: forwards;
+        text-overflow: ellipsis;
       }
       .list__box-price {
         animation-name: slide__price;
@@ -205,6 +225,7 @@
           animation-fill-mode: forwards;
           font-size: 20px;
           opacity: 1;
+          color: $whiteColor;
         }
       }
     }    

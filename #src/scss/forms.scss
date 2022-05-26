@@ -18,13 +18,15 @@
 	color: $whiteColor;
 	box-shadow: 4px 4px 4px $greyColor;
 	background-image: linear-gradient(to right, $lightColor 0%, #d330e9  51%, #e796f7  100%);
-	&:hover {
-		cursor: pointer;
-		background-position: right center; 
-		text-decoration: none;
-		box-shadow: 4px 4px 4px $darkGreyColor;
-		animation: fill 1s ease-in-out;
-		background: linear-gradient(to left, $lightColor 0%, #e897f3  51%, #e7b3f3  100%);
+	@media (any-hover: hover) {
+		&:hover {
+			cursor: pointer;
+			background-position: right center; 
+			text-decoration: none;
+			box-shadow: 4px 4px 4px $darkGreyColor;
+			animation: fill 1s ease-in-out;
+			background: linear-gradient(to left, $lightColor 0%, #e897f3  51%, #e7b3f3  100%);
+		}
 	}
 }
 //</BUTTONS>====================================================================================================

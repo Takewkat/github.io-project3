@@ -4,8 +4,10 @@
   color: $whiteColor;
   a {
 		color: $whiteColor;
-    &:hover {
-      color: $greenColor;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $greenColor;
+      }
     }
   }
   &__container {
