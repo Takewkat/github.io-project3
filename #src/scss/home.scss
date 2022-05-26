@@ -5,7 +5,8 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 40% 20% 40%;
   align-items: center;
-  margin: 40px 0;
+  margin: 20px 0;
+  padding: 20px 0;
   row-gap: 10px;
   @media (max-width:$md3+px){
     display: flex;
@@ -23,7 +24,6 @@
   justify-content: center; 
   grid-row: 2;
   grid-column: 1;
-  align-self: start;
   @media (max-width:$md3+px){
     margin: 46px 0 48px 0;
     align-self: center;
@@ -79,6 +79,8 @@
     }
     &-content {
       object-fit: cover;
+      max-height: 400px;
+      z-index: 0;
     }
   }
   &__info__svg {
