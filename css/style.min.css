@@ -403,6 +403,7 @@ a {
 .footer_svg {
   width: 16px;
   height: 16px;
+  margin-right: 6px;
 }
 
 .menu-footer__list {
@@ -449,6 +450,7 @@ a {
     align-items: center;
     gap: 0;
     margin: 10px 0 0 0;
+    padding: 0;
   }
 }
 
@@ -581,9 +583,10 @@ a {
   width: 40px;
   height: 3px;
   background-color: #99E2D0;
+  margin-bottom: 6px;
 }
 .list__box {
-  margin: 14px 0;
+  margin: 7px 0;
   padding-left: 10px;
   display: grid;
   min-height: 0;
@@ -622,6 +625,7 @@ a {
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 220%;
+  align-self: center;
 }
 .list__box-price {
   grid-column: 3;
