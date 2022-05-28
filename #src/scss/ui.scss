@@ -44,6 +44,15 @@ a {
 		background-color:  #ff79da;
 	}
 }
+@keyframes heart__border {
+	from {
+		background-color: $mainColor;
+
+	}
+	to {
+		background-color:  #ff79da;
+	}
+}
 @keyframes list__drop {
 	0% {
 			opacity: 0;

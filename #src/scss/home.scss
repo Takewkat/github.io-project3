@@ -106,7 +106,16 @@
           -webkit-background-clip: text;
           color: transparent;
           font-weight: bold;
-        }			
+        }		
+        ._heart{
+          animation: heart__border 2s forwards;
+          display: inline-block;
+          opacity: 1;
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+          font-weight: bold;
+        }		
       }
     }
   }
@@ -144,6 +153,7 @@
     line-height: 120%;
     background-color: $whiteColor;
     border-radius: 20px;
+    box-shadow: 4px 4px 10px $shadowColor;
     white-space: nowrap;
     overflow: hidden;
     @include adaptiv-value("font-size", 18, 16, 1);
@@ -235,8 +245,7 @@
         }
       }
     }    
-  }
-  
+  } 
 }
 
 

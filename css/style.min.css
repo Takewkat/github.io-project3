@@ -106,6 +106,7 @@ body._lock {
   display: flex;
   flex-direction: column;
 }
+
 ._container {
   max-width: 1340px;
   margin: 0 80px;
@@ -264,6 +265,14 @@ a {
 @keyframes heart__hover {
   from {
     background-color: transparent;
+  }
+  to {
+    background-color: #ff79da;
+  }
+}
+@keyframes heart__border {
+  from {
+    background-color: #000;
   }
   to {
     background-color: #ff79da;
@@ -561,6 +570,15 @@ a {
     color: transparent;
     font-weight: bold;
   }
+  .card__title__box:hover ._heart {
+    animation: heart__border 2s forwards;
+    display: inline-block;
+    opacity: 1;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+  }
 }
 .card__title {
   align-self: center;
@@ -597,6 +615,7 @@ a {
   line-height: 120%;
   background-color: #fff;
   border-radius: 20px;
+  box-shadow: 4px 4px 10px #E6E6E6;
   white-space: nowrap;
   overflow: hidden;
   font-size: 18px;
@@ -754,7 +773,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 436px;
+  height: 400px;
   max-width: 370px;
   width: 100%;
   row-gap: 20px;
@@ -805,6 +824,13 @@ a {
   }
 }
 
+@media (max-width: 991.98px) {
+  .restaurants {
+    background-color: #f6f6f6;
+    padding: 36px 0 0 0;
+  }
+}
+
 .resto {
   display: flex;
   flex-wrap: wrap;
@@ -840,6 +866,7 @@ a {
   flex-direction: column;
   border-radius: 20px;
   box-shadow: 4px 4px 10px #E6E6E6;
+  background-color: #fff;
 }
 .resto__card__box:hover {
   transform: scale(1.02);
@@ -848,8 +875,13 @@ a {
   width: 336px;
   height: 174px;
   display: grid;
-  grid-template-columns: 244px 92px;
-  grid-template-rows: 58px 58px 58px;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+@media (max-width: 767.98px) {
+  .resto__img {
+    width: auto;
+  }
 }
 .resto__img-img {
   object-fit: cover;
@@ -873,8 +905,8 @@ a {
 }
 .resto__info {
   display: grid;
-  grid-template-columns: 260px 42px;
-  grid-template-rows: 38px 38px;
+  grid-template-columns: 6fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-auto-flow: row;
   height: 76px;
   padding-left: 14px;
@@ -882,7 +914,16 @@ a {
 }
 @media (any-hover: hover) {
   .resto__info:hover .heart {
-    animation: heart__hover 2s forwards;
+    animation: heart__hover 1s forwards;
+    display: inline-block;
+    opacity: 1;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+  }
+  .resto__info:hover ._heart {
+    animation: heart__border 2s forwards;
     display: inline-block;
     opacity: 1;
     background-clip: text;
