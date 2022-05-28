@@ -247,6 +247,7 @@ a {
 ._title {
   font-size: 20px;
   font-weight: 700;
+  line-height: 120%;
 }
 
 ._heart {
@@ -447,7 +448,7 @@ a {
   justify-self: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 40% 20% 40%;
+  grid-template-rows: 1fr 0.2fr 1fr;
   align-items: center;
   margin: 20px 0;
   padding: 20px 0;
@@ -884,7 +885,7 @@ a {
 }
 @media (max-width: 767.98px) {
   .resto__img {
-    width: auto;
+    width: 100%;
   }
 }
 .resto__img-img {
