@@ -22,7 +22,7 @@ section {
 }
 
 html {
-  font-size: 16pxpx;
+  font-size: 16px;
 }
 
 html,
@@ -444,6 +444,7 @@ a {
 }
 
 .page__container {
+  justify-self: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 40% 20% 40%;
@@ -451,6 +452,7 @@ a {
   margin: 20px 0;
   padding: 20px 0;
   row-gap: 10px;
+  background-color: #f6f6f6;
 }
 @media (max-width: 767.98px) {
   .page__container {
@@ -529,6 +531,7 @@ a {
 @media (max-width: 767.98px) {
   .card {
     max-width: 480px;
+    width: 100%;
   }
 }
 .card__image {
@@ -714,6 +717,7 @@ a {
 
 .page {
   flex: 1 1 auto;
+  display: grid;
 }
 
 .search {
@@ -851,7 +855,7 @@ a {
     margin: 0 -40px;
   }
 }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .resto__container {
     justify-content: center;
   }
@@ -890,10 +894,10 @@ a {
   grid-row: 1/4;
 }
 .resto__img__label {
-  margin-right: -92px;
+  margin-right: 16px;
   grid-column: 2;
   grid-row: 1;
-  align-self: center;
+  align-self: end;
   width: 80px;
   height: 28px;
   background-color: #99E2D0;

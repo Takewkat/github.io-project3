@@ -1,6 +1,7 @@
 //PAGE STYLE (page.html)
 //====================================================================================================
 .page__container {
+  justify-self: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 40% 20% 40%;
@@ -8,6 +9,7 @@
   margin: 20px 0;
   padding: 20px 0;
   row-gap: 10px;
+  background-color: $greyColor;
   @media (max-width:$md3+px){
     display: flex;
     flex-direction: column;
@@ -71,6 +73,7 @@
   max-width: 400px;
   @media (max-width:$md3+px){
     max-width: 480px;
+    width: 100%;
   }
   &__image {
     z-index: 0;
