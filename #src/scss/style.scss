@@ -15,7 +15,7 @@ $maxWidth: 1440;
 $maxWidthContainer: 1340;
 $md1: $maxWidthContainer + 12;
 $md2: 991.98;
-$md3: 767.98;
+$md3: 769.98;
 $md4: 479.98;
 $md5: 370;
 
@@ -225,7 +225,13 @@ body {
 		background-color: $whiteColor;
 		&:hover {
 			transform: scale(1.02);
-		}					
+		}	
+		@media (max-width: $md3+px) {
+			width: 90%;
+		}			
+		@media (max-width: $md4+px) {
+			width: 100%;
+		}	
 	}
 	&__img {
 		width: 336px;
