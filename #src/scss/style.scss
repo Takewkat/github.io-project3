@@ -5,7 +5,7 @@ $fontFamily: 'Roboto', sans-serif;
 $fontFamilyTitle: 'Shrikhand', cursive;
 $fontSize: 16px;
 $fontSizeBig: 18px;
-$fontSizeTitle: 20px;
+$fontSizeTitle: 24px;
 $fontWeightTitle: 700;
 $fontWeightLight: 100;
 
@@ -162,6 +162,7 @@ body {
 	display: flex;
 	align-items: center;
 	column-gap: 20px;
+	margin-left: auto;
 	&_span {
 		display: flex;
 		align-items: center;		
@@ -257,6 +258,7 @@ body {
 			height: 28px;
 			background-color: $greenColor;
 			color: $darkGreenColor;
+			font-weight: 600;
 			display: flex;
 			align-items: center;			
 			justify-content: center;

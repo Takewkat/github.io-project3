@@ -130,6 +130,7 @@
 }
 .list {
   max-width: 480px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   background-color: $greyColor;
@@ -205,6 +206,7 @@
       &_icon {
         font-size: 20px;
         align-self: center;
+        margin-left: 6px;
         color: transparent;
         animation-name: slide__check__reverse;
         animation-duration: 1s;
