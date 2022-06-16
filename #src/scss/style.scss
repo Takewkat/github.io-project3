@@ -273,28 +273,6 @@ body {
 		height: 76px;
 		padding-left: 14px;
 		font-size: $fontSizeBig;
-		@media (any-hover: hover) {
-      &:hover {
-        .heart{
-          animation: heart__hover 1s forwards;
-          display: inline-block;
-          opacity: 1;
-          background-clip: text;
-          -webkit-background-clip: text;
-          color: transparent;
-          font-weight: bold;
-        }	
-				._heart{
-          animation: heart__border 2s forwards;
-          display: inline-block;
-          opacity: 1;
-          background-clip: text;
-          -webkit-background-clip: text;
-          color: transparent;
-          font-weight: bold;
-        }					
-      }
-    }
 		&__title {
 			font-weight: $fontWeightTitle;
 			grid-column: 1;
@@ -307,7 +285,6 @@ body {
 		}
 		&__svg {
 			grid-column: 2;
-  		grid-row: 1 / 3;
 			&-hov {
 				grid-column: 2;
 				grid-row: 1 / 3;

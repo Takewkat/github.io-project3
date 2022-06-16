@@ -24,15 +24,34 @@ a {
 	line-height: 120%;
 }
 ._heart {
-	font-size: 23px;
 	align-self: center;
+	cursor: pointer;
+	font-size: 23px;
+	position: relative;
+	& i {
+		background-clip: text;
+		-webkit-background-clip: text;
+		position:absolute;
+		transition: color 0.6s ease;
+		&.far {
+			color: $mainColor;
+		}
+		&.fas {
+			color: transparent;
+		}
+	}
 }
-.heart {
-	color: black;
-	&:visited, &:active {
-		text-shadow: 0 0 1px #fc9be0a7;
-		cursor: pointer;
-	}			
+@media (any-hover: hover) {	
+	._heart:hover {
+		& i {
+			&.far {
+				color: transparent;
+			}
+			&.fas {
+				color:  $lightColor;
+			}
+		}
+	}	
 }
 
 //<KEYFRAMES ANIMATIONS FOR PAGES>====================================================================================================
@@ -42,16 +61,16 @@ a {
 
 	}
 	to {
-		background-color:  #ff79da;
+		background-color:  $lightColor;
 	}
 }
 @keyframes heart__border {
 	from {
-		background-color: $mainColor;
+		background-color: $whiteColor;
 
 	}
 	to {
-		background-color:  #ff79da;
+		background-color:  $lightColor;
 	}
 }
 @keyframes list__drop {

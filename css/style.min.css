@@ -251,32 +251,46 @@ a {
 }
 
 ._heart {
-  font-size: 23px;
   align-self: center;
-}
-
-.heart {
-  color: black;
-}
-.heart:visited, .heart:active {
-  text-shadow: 0 0 1px rgba(252, 155, 224, 0.6549019608);
   cursor: pointer;
+  font-size: 23px;
+  position: relative;
+}
+._heart i {
+  background-clip: text;
+  -webkit-background-clip: text;
+  position: absolute;
+  transition: color 0.6s ease;
+}
+._heart i.far {
+  color: #000;
+}
+._heart i.fas {
+  color: transparent;
 }
 
+@media (any-hover: hover) {
+  ._heart:hover i.far {
+    color: transparent;
+  }
+  ._heart:hover i.fas {
+    color: #FF79DA;
+  }
+}
 @keyframes heart__hover {
   from {
     background-color: transparent;
   }
   to {
-    background-color: #ff79da;
+    background-color: #FF79DA;
   }
 }
 @keyframes heart__border {
   from {
-    background-color: #000;
+    background-color: #fff;
   }
   to {
-    background-color: #ff79da;
+    background-color: #FF79DA;
   }
 }
 @keyframes list__drop {
@@ -551,43 +565,26 @@ a {
 }
 .card__info__svg {
   padding: 0 20px;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: baseline;
 }
 .card__title__box {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1fr 1fr;
   margin-top: -34px;
   z-index: 2;
   background-color: #f6f6f6;
   border-radius: 36px 36px 0 0;
   padding: 34px 20px;
 }
-@media (any-hover: hover) {
-  .card__title__box:hover {
-    cursor: pointer;
-  }
-  .card__title__box:hover .heart {
-    animation: heart__hover 2s forwards;
-    display: inline-block;
-    opacity: 1;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    font-weight: bold;
-  }
-  .card__title__box:hover ._heart {
-    animation: heart__border 2s forwards;
-    display: inline-block;
-    opacity: 1;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    font-weight: bold;
-  }
-}
 .card__title {
   align-self: center;
   font-size: 28px;
   font-family: "Shrikhand", cursive;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .list {
@@ -931,26 +928,6 @@ a {
   padding-left: 14px;
   font-size: 18px;
 }
-@media (any-hover: hover) {
-  .resto__info:hover .heart {
-    animation: heart__hover 1s forwards;
-    display: inline-block;
-    opacity: 1;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    font-weight: bold;
-  }
-  .resto__info:hover ._heart {
-    animation: heart__border 2s forwards;
-    display: inline-block;
-    opacity: 1;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    font-weight: bold;
-  }
-}
 .resto__info__title {
   font-weight: 700;
   grid-column: 1;
@@ -963,7 +940,6 @@ a {
 }
 .resto__info__svg {
   grid-column: 2;
-  grid-row: 1/3;
 }
 .resto__info__svg-hov {
   grid-column: 2;

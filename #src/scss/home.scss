@@ -89,43 +89,26 @@
   }
   &__info__svg {
     padding: 0 20px;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: baseline;
   }
   &__title__box {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-template-rows: 1fr 1fr;
     margin-top: -34px;
     z-index: 2;
     background-color: $greyColor;
     border-radius: 36px 36px 0 0;
     padding: 34px 20px;
-    @media (any-hover: hover) {
-      &:hover {
-        cursor: pointer;
-        .heart{
-          animation: heart__hover 2s forwards;
-          display: inline-block;
-          opacity: 1;
-          background-clip: text;
-          -webkit-background-clip: text;
-          color: transparent;
-          font-weight: bold;
-        }		
-        ._heart{
-          animation: heart__border 2s forwards;
-          display: inline-block;
-          opacity: 1;
-          background-clip: text;
-          -webkit-background-clip: text;
-          color: transparent;
-          font-weight: bold;
-        }		
-      }
-    }
   }
   &__title {
     align-self: center;
     font-size: 28px;
     font-family: $fontFamilyTitle;
+    grid-column: 1;
+    grid-row: 1;
   }
 }
 .list {
