@@ -55,24 +55,6 @@ a {
 }
 
 //<KEYFRAMES ANIMATIONS FOR PAGES>====================================================================================================
-@keyframes heart__hover {
-	from {
-		background-color: transparent;
-
-	}
-	to {
-		background-color:  $lightColor;
-	}
-}
-@keyframes heart__border {
-	from {
-		background-color: $whiteColor;
-
-	}
-	to {
-		background-color:  $lightColor;
-	}
-}
 @keyframes list__drop {
 	0% {
 			opacity: 0;
